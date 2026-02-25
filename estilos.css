@@ -1,0 +1,208 @@
+:root {
+    --primary-color: #2e7d32;
+    --sidebar-bg: #323f46;
+    --text-color: #333;
+    --bg-light: #f0f2f5;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    background-color: var(--bg-light);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    color: white;
+    position: fixed;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.nav-links li {
+    padding: 5px 15px;
+}
+
+.tab-btn {
+    width: 100%;
+    padding: 12px;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #bdc3c7;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.tab-btn:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Main Content */
+.content {
+    margin-left: 250px;
+    padding: 40px;
+    width: 100%;
+}
+
+/* Control de Pestañas */
+.tab-content {
+    display: none; /* Oculto por defecto */
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block; /* Solo se muestra el que tiene la clase active */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos de Tarjetas */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.info-highlight {
+    background: #e8f5e9;
+    border-left: 5px solid var(--primary-color);
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.warning-box {
+    background: #fff3e0;
+    border-left: 5px solid #ff9800;
+    padding: 15px;
+}
+
+.btn-demo {
+    padding: 8px 15px;
+    border-radius: 4px;
+    color: white;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+
+.b-verde { background: #2e7d32; }
+.b-gris { background: #757575; }
+.b-azul { background: #0288d1; }
+.b-rojo { background: #d32f2f; }
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Estilo para la imagen técnica */
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto opcional: zoom al pasar el mouse */
+.image-container img:hover {
+    transform: scale(1.02);
+}
+
+/* Contenedor de videos */
+.video-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.video-container video {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Submenú */
+.submenu {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.submenu.active {
+    max-height: 200px;
+}
+
+.submenu-btn {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+    color: #95a5a6;
+}
+
+.submenu-btn:hover {
+    background-color: rgba(255,255,255,0.08);
+}
+
+.submenu-btn.active {
+    background-color: rgba(46, 125, 50, 0.7);
+}
+
+/* Estilos para iconos dinámicos */
+h1 i, h3 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.info-highlight i {
+    color: #2e7d32;
+}
+
+.warning-box i {
+    color: #ff9800;
+}

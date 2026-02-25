@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetapp - Manual de Usuario </title>
+    <link rel="icon" type="image/png" href="imagenes/logo.PNG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="logo">
+            <img src="imagenes/logo.PNG" alt="Planetapp Logo" class="logo-img">
+            <h2>Planetapp</h2>
+            <p>Sistema Renacer</p>
+        </div>
+        <ul class="nav-links">
+            <li><button class="tab-btn active" onclick="openTab(event, 'bienvenidos')">Bienvenidos</button></li>
+            <li><button class="tab-btn" onclick="openTab(event, 'inicio')">Inicio de Sesión</button></li>
+            <li><button class="tab-btn" onclick="openTab(event, 'dashboard')">Dashboard (Inicio)</button></li>
+            <li>
+                <button class="tab-btn" onclick="toggleSubmenu(event, 'compras-submenu')">Compras</button>
+                <ul class="submenu" id="compras-submenu">
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'compras')">Gestión de Compras</button></li>
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'registrar-compra')">Cómo Registrar una Compra</button></li>
+                </ul>
+            </li>
+            <li>
+                <button class="tab-btn" onclick="toggleSubmenu(event, 'ventas-submenu')">Ventas</button>
+                <ul class="submenu" id="ventas-submenu">
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'ventas')">Gestión de Ventas</button></li>
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'registrar-venta')">Cómo Registrar una Venta</button></li>
+                </ul>
+            </li>
+            <li>
+                <button class="tab-btn" onclick="toggleSubmenu(event, 'materiales-submenu')">Gestión de Materiales</button>
+                <ul class="submenu" id="materiales-submenu">
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'materiales')">Gestión de Materiales</button></li>
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'registrar-categoria')">Cómo Registrar una Categoría</button></li>
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'registrar-material')">Cómo Registrar un Material</button></li>
+                </ul>
+            </li>
+            <li><button class="tab-btn" onclick="openTab(event, 'informes')">Informes</button></li>
+            <li>
+                <button class="tab-btn" onclick="toggleSubmenu(event, 'personas-submenu')">Personas</button>
+                <ul class="submenu" id="personas-submenu">
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'personas')">Gestión de Personas</button></li>
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'registrar-asociado')">Cómo Registrar un Asociado</button></li>
+                    <li><button class="tab-btn submenu-btn" onclick="openTab(event, 'registrar-empresa')">Cómo Registrar una Empresa</button></li>
+                </ul>
+            </li>
+            <li><button class="tab-btn" onclick="openTab(event, 'inventario')">Inventario</button></li>
+            <li><button class="tab-btn" onclick="openTab(event, 'movimientos')">Movimientos de Stock</button></li>
+            <li><button class="tab-btn" onclick="openTab(event, 'configuracion')">Configuración</button></li>
+            <li><button class="tab-btn" onclick="openTab(event, 'componentes')">Componentes</button></li>
+            <li><button class="tab-btn" onclick="openTab(event, 'glosario')">Glosario</button></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        
+        <section id="bienvenidos" class="tab-content active">
+            <h1><i class="fas fa-globe-americas"></i> Bienvenidos a Planetapp</h1>
+            <div class="card">
+                <h2>Manual Interactivo del Sistema Renacer</h2>
+                <p>Gracias por utilizar Planetapp, la plataforma integral diseñada para la gestión eficiente de materiales reciclables y la administración de operaciones de compra y venta.</p>
+                
+                <div class="info-highlight">
+                    <h3><i class="fas fa-bullseye"></i> Objetivo del Sistema</h3>
+                    <p>Facilitar el control y seguimiento de materiales reciclables, optimizando los procesos de recolección, almacenamiento y comercialización, contribuyendo así a un futuro más sostenible.</p>
+                </div>
+
+                <h3><i class="fas fa-book"></i> ¿Cómo usar este manual?</h3>
+                <p>Este manual interactivo le guiará paso a paso por todas las funcionalidades del sistema. Utilice el menú lateral para navegar entre las diferentes secciones:</p>
+                <ul>
+                    <li><strong>Inicio de Sesión:</strong> Aprenda a acceder al sistema y recuperar contraseña</li>
+                    <li><strong>Dashboard (Inicio):</strong> Conozca el panel principal de control y estadísticas</li>
+                    <li><strong>Compras:</strong> Gestione compras y aprenda a registrar nuevas transacciones</li>
+                    <li><strong>Ventas:</strong> Administre ventas y registre operaciones de salida</li>
+                    <li><strong>Gestión de Materiales:</strong> Gestione categorías y registre nuevos materiales</li>
+                    <li><strong>Informes:</strong> Genere reportes de compras, ventas e inventario</li>
+                    <li><strong>Personas:</strong> Administre asociados y empresas del sistema</li>
+                    <li><strong>Inventario:</strong> Consulte stock y valor de materiales en tiempo real</li>
+                    <li><strong>Movimientos de Stock:</strong> Revise entradas, salidas y trazabilidad</li>
+                    <li><strong>Configuración:</strong> Personalice parámetros del sistema</li>
+                    <li><strong>Componentes:</strong> Guía de botones y atajos de teclado</li>
+                    <li><strong>Glosario:</strong> Términos importantes del sistema</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong><i class="fas fa-lightbulb"></i> Consejo:</strong> Le recomendamos revisar cada sección en orden para familiarizarse completamente con el sistema.
+                </div>
+            </div>
+        </section>
+
+        <section id="inicio" class="tab-content">
+            <h1>1. Inicio de Sesión</h1>
+            <div class="card">
+                <h3>Acceso al Sistema</h3>
+                <div class="image-container">
+                    <img src="imagenes/inicio de la app.png" alt="Pantalla de Login">
+                </div>
+                <br>
+                <p>Bienvenido a Planetapp. Para ingresar, utilice las siguientes credenciales:</p>
+                <div class="info-highlight">
+                    <p><strong>Usuario:</strong> admin@admin.com</p>
+                    <p><strong>Contraseña:</strong> admin4</p>
+                </div>
+                <h4>Recuperación de Contraseña</h4>
+                
+                <ol>
+                    <li>Ingrese su correo electrónico.</li>
+                    <div class="image-container">
+                    <img src="imagenes/recuperar.png" alt="loginR">
+                    <li>Responda la pregunta secreta configurada.</li>
+                    <br>
+                    <div class="image-container">
+                    <img src="imagenes/pregunta.png" alt="loginP">
+                    <br>
+                    <br>
+
+                    <li>Establezca su nueva clave de acceso.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="dashboard" class="tab-content">
+            <h1>2.1 Dashboard (Inicio)</h1>
+            <div class="video-container">
+    <video controls>
+        <source src="videos/inicio de la aap.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+    </video>
+</div>
+            <div class="card">
+                <p>El dashboard principal ofrece una vista rápida de la operación:</p>
+                <ul>
+                    <li>Resumen monetario de Ventas y Compras del día.</li>
+                    <li>Feed de actividad reciente con detalles de materiales.</li>
+                    <li>Gráficas estadísticas de materiales más transaccionados.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="compras" class="tab-content">
+            <h1>2.2 Gestión de Compras</h1>
+             <div class="video-container">
+    <video controls>
+        <source src="videos/compras.mp4" type="video/mp4">
+        </video>
+             </div>
+            <div class="card">
+                <p>Módulo para registrar la entrada de materiales de proveedores o recolectores.</p>
+                <ul>
+                    <li><strong>Registro:</strong> Selección de material, peso y precio.</li>
+                    <li><strong>Anulación:</strong> Solo es posible si el material aún existe en stock.</li>
+                    <li><strong>Histrorial:</strong> ver el historial de compras.</li>
+                    <li><strong>busqueda por filtro:</strong> buscar cualquier compra con la sección de filtrado para una rapida busqueda.</li>
+                    <li><strong>Nueva compra:</strong> se podra registrar una nueva compra.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="registrar-compra" class="tab-content">
+            <h1><i class="fas fa-file-invoice"></i> Cómo Registrar una Compra</h1>
+            <div class="card">
+                <h3>Pasos para Registrar una Nueva Compra</h3>
+                <ol>
+                    <li><strong>Acceder al módulo:</strong> Haga clic en el botón "Nueva Compra" en la sección de Compras.</li>
+                    <li><strong>Seleccionar proveedor/recolector:</strong> Elija de la lista o registre uno nuevo.</li>
+                    <li><strong>Seleccionar material:</strong> Escoja el tipo de material reciclable a comprar.</li>
+                    <li><strong>Ingresar peso:</strong> Registre el peso del material en kilogramos.</li>
+                    <li><strong>Definir precio:</strong> Ingrese el precio de compra por kilogramo.</li>
+                    <li><strong>Confirmar:</strong> Revise los datos y haga clic en "Guardar" para completar el registro.</li>
+                </ol>
+                <div class="video-container">
+    <video controls>
+        <source src="videos/registrarcompra.mp4" type="video/mp4">
+        </video>
+             </div>
+                
+                <div class="info-highlight">
+                    <strong>💡 Importante:</strong> El sistema calculará automáticamente el total de la compra y actualizará el inventario.
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Nota:</strong> Verifique que todos los datos sean correctos antes de confirmar, ya que las compras solo pueden anularse si el material aún está en stock.
+                </div>
+            </div>
+        </section>
+
+        <section id="ventas" class="tab-content">
+            <h1>2.3 Gestión de Ventas</h1>
+            <div class="video-container">
+    <video controls>
+        <source src="videos/ventas.mp4" type="video/mp4">
+        </video>
+            </div>
+            <div class="card">
+                <p>Módulo para la salida de materiales hacia clientes finales.</p>
+                <p><strong>Funciones:</strong></p>
+                <ol>
+                    <li>Registrar nueva venta.</li>
+                    <li>Ver historial de ventas</li>
+                    <li>Ver historial de ventas</li>
+                    <li>Eliminar venta</li> 
+
+                </ol>
+                <div class="warning-box">
+                    <strong>Nota:</strong> El sistema valida automáticamente que exista stock suficiente antes de permitir la venta.
+                </div>
+            </div>
+        </section>
+
+        <section id="registrar-venta" class="tab-content">
+            <h1><i class="fas fa-cash-register"></i> Cómo Registrar una Venta</h1>
+            <div class="card">
+                <h3>Pasos para Registrar una Nueva Venta</h3>
+                <ol>
+                    <li><strong>Acceder al módulo:</strong> Haga clic en el botón "Nueva Venta" en la sección de Ventas.</li>
+                    <li><strong>Seleccionar cliente:</strong> Elija de la lista o registre uno nuevo.</li>
+                    <li><strong>Seleccionar material:</strong> Escoja el tipo de material reciclable a vender.</li>
+                    <li><strong>Ingresar peso:</strong> Registre el peso del material en kilogramos.</li>
+                    <li><strong>Definir precio:</strong> Ingrese el precio de venta por kilogramo.</li>
+                    <li><strong>Confirmar:</strong> Revise los datos y haga clic en "Guardar" para completar el registro.</li>
+                </ol>
+                 <div class="video-container">
+    <video controls>
+        <source src="videos/ventaregistrar.mp4" type="video/mp4">
+        </video>
+            </div>
+                
+                <div class="info-highlight">
+                    <strong>💡 Importante:</strong> El sistema calculará automáticamente el total de la venta y actualizará el inventario descontando el stock.
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Nota:</strong> El sistema validará que exista stock suficiente antes de permitir la venta. Si no hay suficiente material, la operación será rechazada.
+                </div>
+            </div>
+        </section>
+
+        <section id="materiales" class="tab-content">
+            <h1>2.4 Materiales</h1>
+            <div class="card">
+                <p>Administre el catálogo de productos reciclables.</p>
+                <ul>
+                    <li>Creación de Categorías (Plásticos, Metales, Papel, etc.)</li>
+                    <li>Edición de precios base.</li>
+                    <li>Consulta de existencias en tiempo real.</li>
+                </ul>
+                <div class="video-container">
+    <video controls>
+        <source src="videos/materiales.mp4" type="video/mp4">
+        </video>
+            </div>
+            </div>
+        </section>
+
+        <section id="registrar-categoria" class="tab-content">
+            <h1><i class="fas fa-folder-open"></i> Cómo Registrar una Categoría</h1>
+            <div class="card">
+                <h3>Pasos para Registrar una Nueva Categoría</h3>
+                <ol>
+                    <li><strong>Acceder al módulo:</strong> Haga clic en el botón "Nueva Categoría" en la sección de Materiales.</li>
+                    <li><strong>Ingresar nombre:</strong> Escriba el nombre de la categoría (ej: Plásticos, Metales, Papel).</li>
+                    <li><strong>Agregar descripción:</strong> Opcionalmente, agregue una descripción de la categoría.</li>
+                    <li><strong>Confirmar:</strong> Haga clic en "Guardar" para crear la categoría.</li>
+                    <div class="video-container">
+    <video controls>
+        <source src="videos/aggcategoria.mp4" type="video/mp4">
+        </video>
+            </div>
+                </ol>
+                
+                
+                <div class="info-highlight">
+                    <strong>💡 Importante:</strong> Las categorías ayudan a organizar los materiales y facilitan la búsqueda y generación de reportes.
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Nota:</strong> No se puede eliminar una categoría que tenga materiales asociados.
+                </div>
+            </div>
+        </section>
+
+        <section id="registrar-material" class="tab-content">
+            <h1><i class="fas fa-box"></i> Cómo Registrar un Material</h1>
+            <div class="card">
+                <h3>Pasos para Registrar un Nuevo Material</h3>
+                <ol>
+                    <li><strong>Acceder al módulo:</strong> Haga clic en el botón "Nuevo Material" en la sección de Materiales.</li>
+                    <li><strong>Seleccionar categoría:</strong> Elija la categoría a la que pertenece el material.</li>
+                    <li><strong>Ingresar nombre:</strong> Escriba el nombre del material (ej: PET, Aluminio, Cartón).</li>
+                    <li><strong>Definir precio base:</strong> Ingrese el precio de referencia por kilogramo.</li>
+                    <li><strong>Agregar descripción:</strong> Opcionalmente, agregue detalles del material.</li>
+                    <li><strong>Confirmar:</strong> Haga clic en "Guardar" para registrar el material.</li>
+                </ol>
+                <div class="video-container">
+    <video controls>
+        <source src="videos/aggmaterial.mp4" type="video/mp4">
+        </video>
+            </div>
+                
+                <div class="info-highlight">
+                    <strong>💡 Importante:</strong> El precio base es solo referencial. Los precios reales se definen en cada compra y venta.
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Nota:</strong> Asegúrese de que el material no esté duplicado antes de crearlo.
+                </div>
+            </div>
+        </section>
+
+        <section id="informes" class="tab-content">
+            <h1><i class="fas fa-chart-bar"></i> Informes</h1>
+            <div class="card">
+                <h3>Generación de Reportes</h3>
+                <p>Módulo para generar y consultar informes del sistema.</p>
+                 <div class="video-container">
+    <video controls>
+        <source src="videos/informes.mp4" type="video/mp4">
+        </video>
+             </div>
+                <ul>
+                    <li><strong>Informe de Compras:</strong> Reporte detallado de todas las compras realizadas en un período.</li>
+                    <li><strong>Informe de Ventas:</strong> Reporte de ventas con totales y estadísticas.</li>
+                    <li><strong>Informe de Inventario:</strong> Estado actual del stock de materiales.</li>
+                    <li><strong>Informe Financiero:</strong> Resumen de ingresos y egresos.</li>
+                </ul>
+
+                 <h3>Generación del PDF y Excel</h3>
+                 <br>
+                 <div class="video-container">
+    <video controls>
+        <source src="videos/generarinformes.mp4" type="video/mp4">
+        </video>
+             </div>
+                <div class="info-highlight">
+                    <strong><i class="fas fa-lightbulb"></i> Tip:</strong> Puede exportar los informes en formato PDF o Excel.
+                </div>
+            </div>
+        </section>
+
+        <section id="personas" class="tab-content">
+            <h1><i class="fas fa-users"></i> Personas</h1>
+            <div class="card">
+                <h3>Gestión de Personas</h3>
+                <p>Administre los registros de personas relacionadas con el sistema.</p>
+                <ul>
+                    <li><strong>Proveedores:</strong> Registro de proveedores de materiales reciclables.</li>
+                    <li><strong>Clientes:</strong> Base de datos de clientes compradores.</li>
+                    <li><strong>Recolectores:</strong> Personal que recolecta materiales.</li>
+                    <li><strong>Asociados:</strong> Personal interno del sistema.</li>
+                </ul>
+                <div class="video-container">
+    <video controls>
+        <source src="videos/personas.mp4" type="video/mp4">
+        </video>
+            </div>
+                <div class="warning-box">
+                    <strong>Nota:</strong> Mantenga actualizada la información de contacto de todas las personas.
+                </div>
+            </div>
+        </section>
+
+        <section id="registrar-asociado" class="tab-content">
+            <h1><i class="fas fa-user-plus"></i> Cómo Registrar un Asociado</h1>
+            <div class="card">
+                <h3>Pasos para Registrar un Nuevo Asociado</h3>
+                <ol>
+                    <li><strong>Acceder al módulo:</strong> Haga clic en el botón "Nuevo Asociado" en la sección de Personas.</li>
+                    <li><strong>Ingresar datos personales:</strong> Nombre completo, cédula/DNI, fecha de nacimiento.</li>
+                    <li><strong>Datos de contacto:</strong> Teléfono, correo electrónico, dirección.</li>
+                    <li><strong>Asignar rol:</strong> Defina el rol del asociado (recolector, operador, administrador).</li>
+                    <li><strong>Crear usuario:</strong> Opcionalmente, cree credenciales de acceso al sistema.</li>
+                    <li><strong>Confirmar:</strong> Revise los datos y haga clic en "Guardar".</li>
+                </ol>
+                <div class="video-container">
+    <video controls>
+        <source src="videos/registrarasociado.mp4" type="video/mp4">
+        </video>
+            </div>
+                
+                <div class="info-highlight">
+                    <strong>💡 Importante:</strong> Los asociados con acceso al sistema deben tener un correo electrónico válido para recuperación de contraseña.
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Nota:</strong> Verifique que el número de cédula/DNI no esté duplicado en el sistema.
+                </div>
+            </div>
+        </section>
+
+        <section id="registrar-empresa" class="tab-content">
+            <h1><i class="fas fa-building"></i> Cómo Registrar una Empresa</h1>
+            <div class="card">
+                <h3>Pasos para Registrar una Nueva Empresa</h3>
+                <ol>
+                    <li><strong>Acceder al módulo:</strong> Haga clic en el botón "Nueva Empresa" en la sección de Personas.</li>
+                    <li><strong>Tipo de empresa:</strong> Seleccione si es Proveedor o Cliente.</li>
+                    <li><strong>Datos de la empresa:</strong> Razón social, RUC/NIT, nombre comercial.</li>
+                    <li><strong>Datos de contacto:</strong> Teléfono, correo electrónico, dirección fiscal.</li>
+                    <li><strong>Persona de contacto:</strong> Nombre y teléfono del representante.</li>
+                    <li><strong>Confirmar:</strong> Revise los datos y haga clic en "Guardar".</li>
+                </ol>
+                <div class="video-container">
+    <video controls>
+        <source src="videos/registrodeempresa.mp4" type="video/mp4">
+        </video>
+            </div>
+                <div class="info-highlight">
+                    <strong>💡 Importante:</strong> Una empresa puede ser tanto proveedor como cliente. Configure ambos roles si es necesario.
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Nota:</strong> El RUC/NIT debe ser único en el sistema para evitar duplicados.
+                </div>
+            </div>
+        </section>
+
+        <section id="inventario" class="tab-content">
+            <h1><i class="fas fa-warehouse"></i> Inventario</h1>
+            <div class="card">
+                <h3>Control de Inventario</h3>
+                <p>Visualice y gestione el inventario de materiales en tiempo real.</p>
+                <ul>
+                    <li><strong>Stock Actual:</strong> Cantidad disponible de cada material.</li>
+                    <li><strong>Valor del Inventario:</strong> Valor monetario total del stock.</li>
+                    <li><strong>Alertas de Stock:</strong> Notificaciones de materiales con bajo stock.</li>
+                    <li><strong>Historial:</strong> Registro de entradas y salidas de materiales.</li>
+                </ul>
+                <div class="video-container">
+    <video controls>
+        <source src="videos/inventario.mp4" type="video/mp4">
+        </video>
+            </div>
+                <div class="info-highlight">
+                    <strong>💡 Importante:</strong> El inventario se actualiza automáticamente con cada compra y venta.
+                </div>
+            </div>
+        </section>
+
+        <section id="movimientos" class="tab-content">
+            <h1><i class="fas fa-exchange-alt"></i> Movimientos de Stock</h1>
+            <div class="card">
+                <h3>Registro de Movimientos</h3>
+                <p>Consulte todos los movimientos de entrada y salida de materiales.</p>
+                <ul>
+                    <li><strong>Entradas:</strong> Compras y recepciones de material.</li>
+                    <li><strong>Salidas:</strong> Ventas y despachos de material.</li>
+                    <li><strong>Ajustes:</strong> Correcciones manuales de inventario.</li>
+                    <li><strong>Trazabilidad:</strong> Seguimiento completo de cada material.</li>
+                </ul>
+                <div class="video-container">
+    <video controls>
+        <source src="videos/stock.mp4" type="video/mp4">
+        </video>
+            </div>
+                <div class="warning-box">
+                    <strong>Nota:</strong> Todos los movimientos quedan registrados con fecha, hora y usuario responsable.
+                </div>
+            </div>
+        </section>
+
+        <section id="configuracion" class="tab-content">
+            <h1><i class="fas fa-cog"></i> Configuración</h1>
+            <div class="card">
+                <h3>Configuración del Sistema</h3>
+                <p>Personalice y configure los parámetros del sistema.</p>
+                <ul>
+                    <li><strong>Datos de la Empresa:</strong> Nombre, dirección, teléfono, etc.</li>
+                    <li><strong>Usuarios:</strong> Gestión de usuarios y permisos.</li>
+                    <li><strong>Categorías:</strong> Configuración de categorías de materiales.</li>
+                    <li><strong>Precios:</strong> Definición de precios base por material.</li>
+                    <li><strong>Respaldo:</strong> Opciones de backup y restauración.</li>
+                </ul>
+                <div class="video-container">
+    <video controls>
+        <source src="videos/configuración.mp4" type="video/mp4">
+        </video>
+            </div>
+                <div class="warning-box">
+                    <strong>⚠️ Importante:</strong> Recordar la palabra secreta que ingresas para poder cambiar la contraseña.
+                </div>
+            </div>
+        </section>
+
+        <section id="componentes" class="tab-content">
+            <h1>3. Componentes Comunes</h1>
+            <div class="card">
+                <p>Guía visual de botones y acciones:</p>
+                <div class="button-grid">
+                    <span class="btn-demo b-verde">Guardar / Nuevo</span>
+                    <span class="btn-demo b-gris">Cancelar / Cerrar</span>
+                    <span class="btn-demo b-azul">Ver Detalle</span>
+                    <span class="btn-demo b-rojo">Eliminar</span>
+                </div>
+                <h3>Atajos de Teclado</h3>
+                <table class="styled-table">
+                    <thead>
+                        <tr><th>Tecla</th><th>Acción</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>ESC</td><td>Cerrar ventana emergente (modal)</td></tr>
+                        <tr><td>Enter</td><td>Confirmar o enviar formulario</td></tr>
+                        <tr><td>Tab</td><td>Navegar entre campos</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="glosario" class="tab-content">
+            <h1>4. Glosario de Términos</h1>
+            <P>Glosario de palabras donde vas a
+             saber un poco sobre como se
+             identifican diferentes palabras en el
+            sistema y que se refiere</P>
+
+            <div class="card">
+               <ul>
+                    <li><strong>Asociados:</strong>  Persona/que hace parte de la empresa</li>
+                    <li><strong>Cliente:</strong> Persona/empresa que compra materiales</li>
+                    <li><strong>Compra:</strong> Adquisición de materiales</li>
+                    <li><strong>Venta:</strong>  Venta de materiales</li>
+                    <li><strong>Stock:</strong> Cantidad disponible</li>
+                     <li><strong>Anular o cancelar:</strong> Cancelar operación</li>
+                    <li><strong>Carreta:</strong> Identificador del vehículo</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="dinamica.js"></script>
+</body>
+</html>
