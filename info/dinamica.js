@@ -23,6 +23,11 @@ function openTab(evt, tabName) {
     }, 10);
     
     evt.currentTarget.classList.add("active");
+
+    // Cerrar sidebar en móvil después de seleccionar
+    if (window.innerWidth <= 768) {
+        document.querySelector('.sidebar').classList.remove('active');
+    }
 }
 
 // Función para desplegar/ocultar submenús
@@ -30,6 +35,11 @@ function toggleSubmenu(evt, submenuId) {
     evt.stopPropagation();
     const submenu = document.getElementById(submenuId);
     submenu.classList.toggle("active");
+}
+
+// Toggle del menú móvil
+function toggleMenu() {
+    document.querySelector('.sidebar').classList.toggle('active');
 }
 
 // Iniciar en la primera pestaña al cargar
